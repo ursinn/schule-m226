@@ -30,15 +30,17 @@ import java.util.ArrayList;
 public class Inventory {
 
     private int maxWight;
-    private int currentWight;
     private ArrayList<Item> items;
+    private int currentWight;
 
     public Inventory(int maxWight) {
         this.maxWight = maxWight;
+        this.currentWight = 0;
         this.items = new ArrayList<>();
     }
 
     public boolean addItem(Item item) {
+        if (items.contains(item)) return false;
         if (item.getType() == ItemType.ITEM || item.getType() == ItemType.CODE || item.getType() == ItemType.KEY) {
             if (item.getWight() == 0) {
                 items.add(item);
@@ -55,16 +57,29 @@ public class Inventory {
     public boolean removeItem(Item item) {
         if (item.getType() == ItemType.KEY) {
             items.remove(item);
+            currentWight -= item.getWight();
             return true;
         }
         return false;
+    }
+
+    public int getMaxWight() {
+        return maxWight;
+    }
+
+    public void setMaxWight(int maxWight) {
+        this.maxWight = maxWight;
     }
 
     public ArrayList<Item> getItems() {
         return items;
     }
 
-    public int getMaxWight() {
-        return maxWight;
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+    }
+
+    public int getCurrentWight() {
+        return currentWight;
     }
 }

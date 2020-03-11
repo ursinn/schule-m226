@@ -27,16 +27,24 @@ package dev.ursinn.schule.m226.zorkgame;
 
 public class Item {
 
-    private ItemType type;
-    private int wight;
     private String name;
     private Item contains;
+    private ItemType type;
+    private int wight;
 
     public Item(ItemType type, int wight, String name, Item contains) {
         this.type = type;
         this.wight = wight;
         this.name = name;
         this.contains = contains;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Item getContains() {
+        return contains;
     }
 
     public ItemType getType() {
@@ -47,11 +55,7 @@ public class Item {
         return wight;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public Item getContains() {
-        return contains;
+    public boolean isContainingItem() {
+        return contains != null;
     }
 }

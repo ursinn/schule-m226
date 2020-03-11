@@ -27,14 +27,22 @@ package dev.ursinn.schule.m226.zorkgame;
 
 public class Question {
 
+    private Item item;
     private String question;
     private String answer;
-    private Item item;
 
     public Question(String question, String answer, Item item) {
         this.question = question;
         this.answer = answer;
         this.item = item;
+    }
+
+    public boolean hasItem() {
+        return item != null;
+    }
+
+    public Item getItem() {
+        return item;
     }
 
     public String getQuestion() {
@@ -45,7 +53,5 @@ public class Question {
         return answer;
     }
 
-    public Item getItem() {
-        return item;
-    }
+
 }

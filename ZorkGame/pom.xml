@@ -31,7 +31,7 @@
 
     <groupId>dev.ursinn.schule.m226</groupId>
     <artifactId>ZorkGame</artifactId>
-    <version>0.x.y-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>ZorkGame</name>

@@ -29,10 +29,20 @@ import java.util.ArrayList;
 
 public class Person {
 
+    private String name;
     private ArrayList<Question> questions;
 
-    public Person(ArrayList<Question> questions) {
+    public Person(ArrayList<Question> questions, String name) {
         this.questions = questions;
+        this.name = name;
+    }
+
+    public boolean hasQuestions() {
+        return questions != null;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public ArrayList<Question> getQuestions() {
