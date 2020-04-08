@@ -23,37 +23,11 @@
  *
  */
 
-package dev.ursinn.schule.m226.zorkgame;
+package dev.ursinn.schule.m226.zorkgame.items;
 
-import dev.ursinn.schule.m226.zorkgame.items.Item;
+public class OfficeKey extends Item {
 
-public class Question {
-
-    private Item item;
-    private String question;
-    private String answer;
-
-    public Question(String question, String answer, Item item) {
-        this.question = question;
-        this.answer = answer;
-        this.item = item;
+    public OfficeKey() {
+        super(ItemType.KEY, 1, "Office-Key", null);
     }
-
-    public boolean hasItem() {
-        return item != null;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-
 }

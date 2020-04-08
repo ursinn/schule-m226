@@ -23,7 +23,7 @@
  *
  */
 
-package dev.ursinn.schule.m226.zorkgame;
+package dev.ursinn.schule.m226.zorkgame.items;
 
 public class Item {
 

@@ -23,37 +23,23 @@
  *
  */
 
-package dev.ursinn.schule.m226.zorkgame;
+package dev.ursinn.schule.m226.zorkgame.rooms;
 
-import dev.ursinn.schule.m226.zorkgame.items.Item;
+import dev.ursinn.schule.m226.zorkgame.Person;
+import dev.ursinn.schule.m226.zorkgame.Question;
+import dev.ursinn.schule.m226.zorkgame.items.BuildingBKey;
 
-public class Question {
+import java.util.ArrayList;
 
-    private Item item;
-    private String question;
-    private String answer;
+public class Reception extends Room {
 
-    public Question(String question, String answer, Item item) {
-        this.question = question;
-        this.answer = answer;
-        this.item = item;
+    public Reception() {
+        super("Reception", true);
+        ArrayList<Question> questions = new ArrayList<>();
+        ArrayList<Person> persons = new ArrayList<>();
+        questions.add(new Question("Hallo?", "Hallo", null));
+        questions.add(new Question("Key?", "Da", new BuildingBKey()));
+        persons.add(new Person(questions, "Hans"));
+        setPersons(persons);
     }
-
-    public boolean hasItem() {
-        return item != null;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-
 }

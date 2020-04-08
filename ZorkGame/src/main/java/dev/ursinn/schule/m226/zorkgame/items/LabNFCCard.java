@@ -23,37 +23,12 @@
  *
  */
 
-package dev.ursinn.schule.m226.zorkgame;
+package dev.ursinn.schule.m226.zorkgame.items;
 
-import dev.ursinn.schule.m226.zorkgame.items.Item;
+public class LabNFCCard extends Item {
 
-public class Question {
 
-    private Item item;
-    private String question;
-    private String answer;
-
-    public Question(String question, String answer, Item item) {
-        this.question = question;
-        this.answer = answer;
-        this.item = item;
+    public LabNFCCard() {
+        super(ItemType.KEY, 0, "Lab-NFC-Card", null);
     }
-
-    public boolean hasItem() {
-        return item != null;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-
 }

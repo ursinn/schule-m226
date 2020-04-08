@@ -23,37 +23,11 @@
  *
  */
 
-package dev.ursinn.schule.m226.zorkgame;
+package dev.ursinn.schule.m226.zorkgame.rooms;
 
-import dev.ursinn.schule.m226.zorkgame.items.Item;
+public class BuildingA extends Room {
 
-public class Question {
-
-    private Item item;
-    private String question;
-    private String answer;
-
-    public Question(String question, String answer, Item item) {
-        this.question = question;
-        this.answer = answer;
-        this.item = item;
+    public BuildingA() {
+        super("Building A", true);
     }
-
-    public boolean hasItem() {
-        return item != null;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-
 }

@@ -23,37 +23,29 @@
  *
  */
 
-package dev.ursinn.schule.m226.zorkgame;
+package dev.ursinn.schule.m226.zorkgame.commands;
 
-import dev.ursinn.schule.m226.zorkgame.items.Item;
+import dev.ursinn.schule.m226.zorkgame.Game;
+import dev.ursinn.schule.m226.zorkgame.items.Binoculars;
+import dev.ursinn.schule.m226.zorkgame.items.ItemType;
+import dev.ursinn.schule.m226.zorkgame.rooms.Office;
 
-public class Question {
+public class UseCommand implements CommandInterface {
 
-    private Item item;
-    private String question;
-    private String answer;
-
-    public Question(String question, String answer, Item item) {
-        this.question = question;
-        this.answer = answer;
-        this.item = item;
+    @Override
+    public void command(String cmd, String[] args) {
+        if (Game.getInstance().inventory.getItems().size() == 0)
+            return;
+        if (Game.getInstance().currentRoom.shortDescription().equalsIgnoreCase(new Office().shortDescription())) {
+            Game.getInstance().inventory.getItems().forEach(item -> {
+                if (item.getType() == ItemType.ITEM) {
+                    if (item.getName().equalsIgnoreCase(new Binoculars().getName())) {
+                        Game.getInstance().reception.setExits(Game.getInstance().buildingC, Game.getInstance().secretOffice, null, null);
+                        System.out.println("Secret Office Found!");
+                        Game.getInstance().foundSecretRoom = true;
+                    }
+                }
+            });
+        }
     }
-
-    public boolean hasItem() {
-        return item != null;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-
 }

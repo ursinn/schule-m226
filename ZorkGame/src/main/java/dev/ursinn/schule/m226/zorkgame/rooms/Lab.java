@@ -23,37 +23,22 @@
  *
  */
 
-package dev.ursinn.schule.m226.zorkgame;
+package dev.ursinn.schule.m226.zorkgame.rooms;
 
 import dev.ursinn.schule.m226.zorkgame.items.Item;
+import dev.ursinn.schule.m226.zorkgame.items.ItemType;
+import dev.ursinn.schule.m226.zorkgame.items.SecretOfficeCode;
+import dev.ursinn.schule.m226.zorkgame.items.SecretOfficeKey;
 
-public class Question {
+import java.util.ArrayList;
 
-    private Item item;
-    private String question;
-    private String answer;
+public class Lab extends Room {
 
-    public Question(String question, String answer, Item item) {
-        this.question = question;
-        this.answer = answer;
-        this.item = item;
+    public Lab() {
+        super("Lab", true);
+        ArrayList<Item> items = new ArrayList<>();
+        items.add(new Item(ItemType.OBJECT, 0, "Box", new SecretOfficeCode()));
+        items.add(new Item(ItemType.OBJECT, 0, "Box", new SecretOfficeKey()));
+        setItems(items);
     }
-
-    public boolean hasItem() {
-        return item != null;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-
 }

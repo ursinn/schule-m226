@@ -23,37 +23,30 @@
  *
  */
 
-package dev.ursinn.schule.m226.zorkgame;
+package dev.ursinn.schule.m226.zorkgame.rooms;
 
-import dev.ursinn.schule.m226.zorkgame.items.Item;
+import dev.ursinn.schule.m226.zorkgame.Person;
+import dev.ursinn.schule.m226.zorkgame.Question;
+import dev.ursinn.schule.m226.zorkgame.items.BuildingAKey;
+import dev.ursinn.schule.m226.zorkgame.items.TestRoomKey;
 
-public class Question {
+import java.util.ArrayList;
 
-    private Item item;
-    private String question;
-    private String answer;
+public class SecretOffice extends Room {
 
-    public Question(String question, String answer, Item item) {
-        this.question = question;
-        this.answer = answer;
-        this.item = item;
+    public SecretOffice() {
+        super("Secret Office", true);
+        ArrayList<Question> questions = new ArrayList<>();
+        ArrayList<Question> questions2 = new ArrayList<>();
+        ArrayList<Question> questions3 = new ArrayList<>();
+        ArrayList<Person> persons = new ArrayList<>();
+        questions.add(new Question("Key?", "Da", new TestRoomKey()));
+        questions2.add(new Question("key?", "Da", new BuildingAKey()));
+        questions3.add(new Question("Hallo?", "Hallo!", null));
+        persons.add(new Person(questions, "Peter"));
+        persons.add(new Person(questions2, "Alex"));
+        persons.add(new Person(questions3, "Tobi"));
+        persons.add(new Person(null, "Marvin"));
+        setPersons(persons);
     }
-
-    public boolean hasItem() {
-        return item != null;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-
 }

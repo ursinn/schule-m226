@@ -23,37 +23,18 @@
  *
  */
 
-package dev.ursinn.schule.m226.zorkgame;
+package dev.ursinn.schule.m226.zorkgame.commands;
 
-import dev.ursinn.schule.m226.zorkgame.items.Item;
+import dev.ursinn.schule.m226.zorkgame.Game;
+import dev.ursinn.schule.m226.zorkgame.rooms.Room;
 
-public class Question {
+public class BackCommand implements CommandInterface {
 
-    private Item item;
-    private String question;
-    private String answer;
-
-    public Question(String question, String answer, Item item) {
-        this.question = question;
-        this.answer = answer;
-        this.item = item;
+    @Override
+    public void command(String cmd, String[] args) {
+        Room back = Game.getInstance().lastRoom;
+        Game.getInstance().lastRoom = Game.getInstance().currentRoom;
+        Game.getInstance().currentRoom = back;
+        System.out.println(Game.getInstance().currentRoom.longDescription());
     }
-
-    public boolean hasItem() {
-        return item != null;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-
 }

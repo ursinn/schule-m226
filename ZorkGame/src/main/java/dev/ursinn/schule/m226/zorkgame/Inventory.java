@@ -25,6 +25,9 @@
 
 package dev.ursinn.schule.m226.zorkgame;
 
+import dev.ursinn.schule.m226.zorkgame.items.Item;
+import dev.ursinn.schule.m226.zorkgame.items.ItemType;
+
 import java.util.ArrayList;
 
 public class Inventory {

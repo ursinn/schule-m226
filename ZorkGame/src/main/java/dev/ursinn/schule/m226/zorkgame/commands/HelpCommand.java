@@ -23,37 +23,18 @@
  *
  */
 
-package dev.ursinn.schule.m226.zorkgame;
+package dev.ursinn.schule.m226.zorkgame.commands;
 
-import dev.ursinn.schule.m226.zorkgame.items.Item;
+import dev.ursinn.schule.m226.zorkgame.Game;
 
-public class Question {
+public class HelpCommand implements CommandInterface {
 
-    private Item item;
-    private String question;
-    private String answer;
-
-    public Question(String question, String answer, Item item) {
-        this.question = question;
-        this.answer = answer;
-        this.item = item;
+    @Override
+    public void command(String cmd, String[] args) {
+        System.out.println("You are lost. You are alone. You wander");
+        System.out.println("around at Monash Uni, Peninsula Campus.");
+        System.out.println();
+        System.out.println("Your command words are:");
+        System.out.println(Game.getInstance().parser.showCommands());
     }
-
-    public boolean hasItem() {
-        return item != null;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-
 }

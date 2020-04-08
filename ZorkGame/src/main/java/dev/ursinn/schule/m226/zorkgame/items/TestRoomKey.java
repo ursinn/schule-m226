@@ -23,13 +23,11 @@
  *
  */
 
-package dev.ursinn.schule.m226.zorkgame;
+package dev.ursinn.schule.m226.zorkgame.items;
 
-public enum ItemType {
+public class TestRoomKey extends Item {
 
-    KEY,
-    CODE,
-    ITEM,
-    OBJECT,
-
+    public TestRoomKey() {
+        super(ItemType.KEY, 2, "Test-Room-Key", null);
+    }
 }

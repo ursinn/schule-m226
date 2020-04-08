@@ -23,37 +23,30 @@
  *
  */
 
-package dev.ursinn.schule.m226.zorkgame;
+package dev.ursinn.schule.m226.zorkgame.commands;
 
+import dev.ursinn.schule.m226.zorkgame.Game;
 import dev.ursinn.schule.m226.zorkgame.items.Item;
 
-public class Question {
+public class DropCommand implements CommandInterface {
 
-    private Item item;
-    private String question;
-    private String answer;
-
-    public Question(String question, String answer, Item item) {
-        this.question = question;
-        this.answer = answer;
-        this.item = item;
+    @Override
+    public void command(String cmd, String[] args) {
+        if (args.length != 0)
+            drop(args[0]);
+        else
+            System.err.println("Error: drop <Item Name>");
     }
 
-    public boolean hasItem() {
-        return item != null;
+    private void drop(String itemName) {
+        for (Item item : Game.getInstance().inventory.getItems()) {
+            if (item.getName().equalsIgnoreCase(itemName)) {
+                if (Game.getInstance().inventory.removeItem(item)) {
+                    System.out.println("Item Droped");
+                } else
+                    System.err.println("Can't Drop Item");
+                return;
+            }
+        }
     }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public String getAnswer() {
-        return answer;
-    }
-
-
 }
