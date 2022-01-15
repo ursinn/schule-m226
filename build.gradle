@@ -40,7 +40,7 @@ tasks.withType(JavaCompile).configureEach {
 // Build FatJar
 jar {
     manifest {
-        attributes "Main-Class": "dev.ursinn.game.snake.Main"
+        attributes "Main-Class": "dev.ursinn.schule.m226.zorkgame.Main"
     }
 
     from {
