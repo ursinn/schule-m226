@@ -8,13 +8,7 @@
 [![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/ursinn/schule-m226?logo=snyk&style=for-the-badge)](https://snyk.io/test/github/ursinn/schule-m226)
 [![License](https://img.shields.io/github/license/ursinn/schule-m226?style=for-the-badge)](https://github.com/ursinn/schule-m226/blob/main/LICENSE)
 
----
-
-## Description
-
 Modul 226 Zork Game
-
----
 
 ## License
 
