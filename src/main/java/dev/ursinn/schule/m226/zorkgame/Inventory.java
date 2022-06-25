@@ -28,11 +28,12 @@ import dev.ursinn.schule.m226.zorkgame.items.Item;
 import dev.ursinn.schule.m226.zorkgame.items.ItemType;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Inventory {
 
     private int maxWight;
-    private ArrayList<Item> items;
+    private List<Item> items;
     private int currentWight;
 
     public Inventory(int maxWight) {
@@ -73,11 +74,11 @@ public class Inventory {
         this.maxWight = maxWight;
     }
 
-    public ArrayList<Item> getItems() {
+    public List<Item> getItems() {
         return items;
     }
 
-    public void setItems(ArrayList<Item> items) {
+    public void setItems(List<Item> items) {
         this.items = items;
     }
 

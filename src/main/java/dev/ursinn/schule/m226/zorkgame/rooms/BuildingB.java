@@ -29,12 +29,13 @@ import dev.ursinn.schule.m226.zorkgame.items.ItemType;
 import dev.ursinn.schule.m226.zorkgame.items.OfficeKey;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BuildingB extends Room {
 
     public BuildingB() {
         super("Building B", true);
-        ArrayList<Item> items = new ArrayList<>();
+        List<Item> items = new ArrayList<>();
         items.add(new Item(ItemType.OBJECT, 0, "Pflanze", new OfficeKey()));
         setItems(items);
     }

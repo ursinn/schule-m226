@@ -30,15 +30,16 @@ import dev.ursinn.schule.m226.zorkgame.items.BuildingAKey;
 import dev.ursinn.schule.m226.zorkgame.items.TestRoomKey;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SecretOffice extends Room {
 
     public SecretOffice() {
         super("Secret Office", true);
-        ArrayList<Question> questions = new ArrayList<>();
-        ArrayList<Question> questions2 = new ArrayList<>();
-        ArrayList<Question> questions3 = new ArrayList<>();
-        ArrayList<Person> persons = new ArrayList<>();
+        List<Question> questions = new ArrayList<>();
+        List<Question> questions2 = new ArrayList<>();
+        List<Question> questions3 = new ArrayList<>();
+        List<Person> persons = new ArrayList<>();
         questions.add(new Question("Key?", "Da", new TestRoomKey()));
         questions2.add(new Question("key?", "Da", new BuildingAKey()));
         questions3.add(new Question("Hallo?", "Hallo!", null));

@@ -30,12 +30,13 @@ import dev.ursinn.schule.m226.zorkgame.items.SecretOfficeCode;
 import dev.ursinn.schule.m226.zorkgame.items.SecretOfficeKey;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Lab extends Room {
 
     public Lab() {
         super("Lab", true);
-        ArrayList<Item> items = new ArrayList<>();
+        List<Item> items = new ArrayList<>();
         items.add(new Item(ItemType.OBJECT, 0, "Box", new SecretOfficeCode()));
         items.add(new Item(ItemType.OBJECT, 0, "Box", new SecretOfficeKey()));
         setItems(items);

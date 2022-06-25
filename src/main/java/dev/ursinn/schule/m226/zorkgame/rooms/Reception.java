@@ -29,13 +29,14 @@ import dev.ursinn.schule.m226.zorkgame.Question;
 import dev.ursinn.schule.m226.zorkgame.items.BuildingBKey;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Reception extends Room {
 
     public Reception() {
         super("Reception", true);
-        ArrayList<Question> questions = new ArrayList<>();
-        ArrayList<Person> persons = new ArrayList<>();
+        List<Question> questions = new ArrayList<>();
+        List<Person> persons = new ArrayList<>();
         questions.add(new Question("Hallo?", "Hallo", null));
         questions.add(new Question("Key?", "Da", new BuildingBKey()));
         persons.add(new Person(questions, "Hans"));

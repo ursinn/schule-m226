@@ -29,12 +29,13 @@ import dev.ursinn.schule.m226.zorkgame.items.ItemType;
 import dev.ursinn.schule.m226.zorkgame.items.RoofKey;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Office extends Room {
 
     public Office() {
         super("Office", true);
-        ArrayList<Item> items = new ArrayList<>();
+        List<Item> items = new ArrayList<>();
         items.add(new Item(ItemType.OBJECT, 0, "Fenster", null));
         items.add(new Item(ItemType.OBJECT, 0, "Box", new RoofKey()));
         setItems(items);

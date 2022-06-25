@@ -30,12 +30,13 @@ import dev.ursinn.schule.m226.zorkgame.items.ItemType;
 import dev.ursinn.schule.m226.zorkgame.items.LabNFCCard;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Roof extends Room {
 
     public Roof() {
         super("Roof", true);
-        ArrayList<Item> items = new ArrayList<>();
+        List<Item> items = new ArrayList<>();
         items.add(new Item(ItemType.OBJECT, 0, "Box", new Binoculars()));
         items.add(new Item(ItemType.OBJECT, 0, "Box", new LabNFCCard()));
         setItems(items);
