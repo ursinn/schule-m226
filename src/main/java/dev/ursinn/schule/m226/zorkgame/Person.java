@@ -24,28 +24,11 @@
 
 package dev.ursinn.schule.m226.zorkgame;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class Person {
-
-    private String name;
-    private ArrayList<Question> questions;
-
-    public Person(ArrayList<Question> questions, String name) {
-        this.questions = questions;
-        this.name = name;
-    }
+public record Person(List<Question> questions, String name) {
 
     public boolean hasQuestions() {
         return questions != null;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public ArrayList<Question> getQuestions() {
-        return questions;
-    }
-
 }

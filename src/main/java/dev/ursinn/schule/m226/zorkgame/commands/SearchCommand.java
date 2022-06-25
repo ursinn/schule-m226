@@ -52,7 +52,7 @@ public class SearchCommand implements CommandInterface {
                 }
             });
         if (currentRoom.hasPersons())
-            currentRoom.getPersons().forEach(person -> System.out.println("Sehe Person: " + person.getName()));
+            currentRoom.getPersons().forEach(person -> System.out.println("Sehe Person: " + person.name()));
         if (currentRoom.shortDescription().equalsIgnoreCase(new Office().shortDescription())) {
             Game.getInstance().currentRoom.setExits(Game.getInstance().buildingB, Game.getInstance().roof, null, null);
             Game.getInstance().office.setExits(Game.getInstance().buildingB, Game.getInstance().roof, null, null);

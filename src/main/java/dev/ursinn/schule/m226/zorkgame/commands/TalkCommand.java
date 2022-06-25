@@ -53,8 +53,8 @@ public class TalkCommand implements CommandInterface {
         if (ask == null)
             currentRoom.getPersons().forEach(person -> {
                 if (person.hasQuestions()) {
-                    if (person.getName().equalsIgnoreCase(name)) {
-                        person.getQuestions().forEach(question -> System.out.println(question.getQuestion()));
+                    if (person.name().equalsIgnoreCase(name)) {
+                        person.questions().forEach(question -> System.out.println(question.question()));
                         if (currentRoom.shortDescription().equalsIgnoreCase(new Reception().shortDescription())) {
                             if (Game.getInstance().foundSecretRoom) {
                                 System.out.println("xxx");
@@ -66,7 +66,7 @@ public class TalkCommand implements CommandInterface {
         else {
             currentRoom.getPersons().forEach(person -> {
                 if (person.hasQuestions()) {
-                    if (person.getName().equalsIgnoreCase(name)) {
+                    if (person.name().equalsIgnoreCase(name)) {
                         if (ask.equalsIgnoreCase("xxx")) { // TODO
                             if (currentRoom.shortDescription().equalsIgnoreCase(new Reception().shortDescription())) {
                                 if (Game.getInstance().foundSecretRoom) {
@@ -76,11 +76,11 @@ public class TalkCommand implements CommandInterface {
                                 }
                             }
                         }
-                        person.getQuestions().forEach(question -> {
-                            if (question.getQuestion().equalsIgnoreCase(ask)) {
-                                System.out.println(question.getAnswer());
+                        person.questions().forEach(question -> {
+                            if (question.question().equalsIgnoreCase(ask)) {
+                                System.out.println(question.answer());
                                 if (question.hasItem())
-                                    Game.getInstance().inventory.addItem(question.getItem());
+                                    Game.getInstance().inventory.addItem(question.item());
                             }
                         });
                     }
