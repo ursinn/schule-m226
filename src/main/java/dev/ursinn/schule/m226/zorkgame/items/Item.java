@@ -24,34 +24,24 @@
 
 package dev.ursinn.schule.m226.zorkgame.items;
 
+import lombok.Getter;
+
 public class Item {
 
-    private String name;
-    private Item contains;
-    private ItemType type;
-    private int wight;
+    @Getter
+    private final String name;
+    @Getter
+    private final Item contains;
+    @Getter
+    private final ItemType type;
+    @Getter
+    private final int wight;
 
     public Item(ItemType type, int wight, String name, Item contains) {
         this.type = type;
         this.wight = wight;
         this.name = name;
         this.contains = contains;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Item getContains() {
-        return contains;
-    }
-
-    public ItemType getType() {
-        return type;
-    }
-
-    public int getWight() {
-        return wight;
     }
 
     public boolean isContainingItem() {
