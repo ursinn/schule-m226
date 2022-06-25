@@ -33,7 +33,7 @@ public class UseCommand implements CommandInterface {
 
     @Override
     public void command(String cmd, String[] args) {
-        if (Game.getInstance().inventory.getItems().size() == 0)
+        if (Game.getInstance().inventory.getItems().isEmpty())
             return;
         if (Game.getInstance().currentRoom.shortDescription().equalsIgnoreCase(new Office().shortDescription())) {
             Game.getInstance().inventory.getItems().forEach(item -> {
